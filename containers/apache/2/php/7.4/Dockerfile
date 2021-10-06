@@ -21,21 +21,21 @@ RUN apt update && \
     curl -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
     echo 'deb https://packages.sury.org/php/ buster main' > /etc/apt/sources.list.d/php.list && \
     apt update && \
-    apt install -y apache2 php5.6 php5.6-cli libapache2-mod-php5.6 \
-        php5.6-mysql \
-        php5.6-mbstring \
-        php5.6-gd \
-        php5.6-curl \
-        php5.6-xdebug \
-        php5.6-opcache \
-        php5.6-xml \
+    apt install -y apache2 php7.4 php7.4-cli libapache2-mod-php7.4 \
+        php7.4-mysql \
+        php7.4-mbstring \
+        php7.4-gd \
+        php7.4-curl \
+        php7.4-xdebug \
+        php7.4-opcache \
+        php7.4-xml \
         composer
 
 COPY ./rootfs /
 
 RUN a2enmod remoteip && \
     a2enconf remoteip && \
-    a2enmod php5.6 && \
+    a2enmod php7.4 && \
     a2enmod rewrite && \
     usermod -u 1000 www-data
 

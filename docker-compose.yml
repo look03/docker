@@ -25,7 +25,7 @@ services:
 
     mysql:
         build: ./containers/mariadb/${MARIADB_VERSION}
-        hostname: database
+        hostname: mysql
         environment:
             MYSQL_DATABASE: ${DATABASE_NAME}
             MYSQL_USER: ${DATABASE_USER}
