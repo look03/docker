@@ -21,7 +21,7 @@ REMOTE_DATABASE := $(REMOTE_USER)@$(REMOTE_HOST):$(REMOTE_DATABASE_PATH)
 ## Названия контейнеров
 CONTAINER_APPLICATION := $(shell docker ps --filter name=_application_ --format {{.Names}})
 CONTAINER_SERVER := $(shell docker ps --filter name=_server_ --format {{.Names}})
-CONTAINER_DATABASE := $(shell docker ps --filter name=_database_ --format {{.Names}})
+CONTAINER_DATABASE := $(shell docker ps --filter name=_mysql_ --format {{.Names}})
 CONTAINER_DATABASE_MANAGEMENT_SYSTEM := $(shell docker ps --filter name=_database-management-system_ --format {{.Names}})
 
 ## Программы Docker и Docker-Compose
